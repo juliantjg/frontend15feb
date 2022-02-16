@@ -78,7 +78,7 @@ class Sidebar extends Component {
   } */
 
   AdminVerified = async () => {
-    const res = await axios.get("http://localhost:8000/api/getLogoutStatus");
+    const res = await axios.get("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/getLogoutStatus");
 
     store.dispatch({
       type: GET_LOGOUT_STATUS,
@@ -98,7 +98,7 @@ class Sidebar extends Component {
       })),
     });
 
-    axios.post("http://localhost:8000/api/checkToken").catch((error) => {
+    axios.post("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/checkToken").catch((error) => {
       localStorage.clear();
       alert("Multiple Signin detected");
       window.location.reload();
@@ -107,7 +107,7 @@ class Sidebar extends Component {
     this.AdminVerified().then((result) => {
       console.log(result);
       if (result !== "") {
-        axios.get("http://localhost:8000/api/logout").then(() => {
+        axios.get("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/logout").then(() => {
           localStorage.clear();
           alert(result);
           window.location.reload();

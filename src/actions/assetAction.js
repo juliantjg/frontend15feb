@@ -3,7 +3,7 @@ import { GET_ERRORS, GET_ASSETS, GET_PAST_ASSETS, GET_ASSET, GET_ASSETS_ADMIN, G
 
 export const createAsset = (asset, history) => async (dispatch) => {
   try {
-    const res = await axios.post("http://localhost:8000/api/asset/create", asset);
+    const res = await axios.post("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/asset/create", asset);
     setTimeout(() => {
     history.push("/AMDashboard");
   }, 2000);
@@ -21,7 +21,7 @@ export const createAsset = (asset, history) => async (dispatch) => {
 };
 
 export const getAssets = () => async (dispatch) => {
-  const res = await axios.get("http://localhost:8000/api/verified/asset");
+  const res = await axios.get("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/verified/asset");
   dispatch({
     type: GET_ASSETS,
     payload: res.data,
@@ -29,7 +29,7 @@ export const getAssets = () => async (dispatch) => {
 };
 
 export const getPastAssets = () => async (dispatch) => {
-  const res = await axios.get("http://localhost:8000/api/pastOfferings");
+  const res = await axios.get("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/pastOfferings");
   dispatch({
     type: GET_PAST_ASSETS,
     payload: res.data,
@@ -37,7 +37,7 @@ export const getPastAssets = () => async (dispatch) => {
 };
 
 export const getAsset = (id) => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/asset/${id}`);
+  const res = await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${id}`);
   dispatch({
     type: GET_ASSET,
     payload: res.data,
@@ -45,7 +45,7 @@ export const getAsset = (id) => async (dispatch) => {
 };
 
 export const getAdminAssets = () => async (dispatch) => {
-  const res = await axios.get("http://localhost:8000/api/admin/asset");
+  const res = await axios.get("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/admin/asset");
   dispatch({
     type: GET_ASSETS_ADMIN,
     payload: res.data,
@@ -53,7 +53,7 @@ export const getAdminAssets = () => async (dispatch) => {
 };
 
 export const getAdminAsset = (id) => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/admin/asset/${id}`);
+  const res = await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/admin/asset/${id}`);
   dispatch({
     type: GET_ASSET_ADMIN,
     payload: res.data,
@@ -61,7 +61,7 @@ export const getAdminAsset = (id) => async (dispatch) => {
 };
 
 export const getUserAssets = (id) => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/user/assets/${id}`);
+  const res = await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/assets/${id}`);
   dispatch({
     type: GET_USER_ASSETS,
     payload: res.data,
@@ -69,7 +69,7 @@ export const getUserAssets = (id) => async (dispatch) => {
 };
 
 export const getCurrUserAssets = () => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/asset`);
+  const res = await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/asset`);
   dispatch({
     type: GET_CURR_USER_ASSETS,
     payload: res.data,

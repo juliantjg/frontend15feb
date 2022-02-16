@@ -11,7 +11,7 @@ import jwt_decode from "jwt-decode";
 
 export const createNewUser = (newUser, history) => async (dispatch) => {
   try {
-    const res = await axios.post("http://localhost:8000/api/register", newUser);
+    const res = await axios.post("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/register", newUser);
     setTimeout(() => {
       history.push("/SignIn");
     }, 2000);
@@ -29,7 +29,7 @@ export const createNewUser = (newUser, history) => async (dispatch) => {
 
 export const checkToken = () => async (dispatch) => {
   try {
-    const res = await axios.post("http://localhost:8000/api/checkToken");
+    const res = await axios.post("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/checkToken");
     dispatch({
       type: CHECK_TOKEN,
       payload: res.data.data,
@@ -46,7 +46,7 @@ export const login = (LoginRequest) => async (dispatch) => {
   try {
     //post => login request
     const res = await axios.post(
-      "http://localhost:8000/api/login",
+      "http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/login",
       LoginRequest
     );
     //extract token from data
@@ -68,7 +68,7 @@ export const login = (LoginRequest) => async (dispatch) => {
     localStorage.setItem("scopes", decoded2.scopes);
     localStorage.setItem("userName", decoded.name);
 
-    const res2 = await axios.post("http://localhost:8000/api/checkToken");
+    const res2 = await axios.post("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/checkToken");
     localStorage.setItem("tokenIsValid", res2.data.message);
     console.log(res2.data);
 
@@ -93,7 +93,7 @@ export const adminLogin = (LoginRequest) => async (dispatch) => {
   try {
     //post => login request
     const res = await axios.post(
-      "http://localhost:8000/api/adminLogin",
+      "http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/adminLogin",
       LoginRequest
     );
     //extract token from data
@@ -127,7 +127,7 @@ export const adminLogin = (LoginRequest) => async (dispatch) => {
 };
 
 export const logout = (history) => async (dispatch) => {
-  const res = await axios.get("http://localhost:8000/api/logout");
+  const res = await axios.get("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/logout");
   localStorage.clear();
   setToken(false);
   history.push("/SignIn");    
@@ -147,7 +147,7 @@ export const adminLogout = () => (dispatch) => {
 };
 
 export const getUsers = () => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/users`);
+  const res = await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/users`);
   dispatch({
     type: GET_USERS,
     payload: res.data,
@@ -155,7 +155,7 @@ export const getUsers = () => async (dispatch) => {
 };
 
 export const getUser = (id) => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/user/${id}`);
+  const res = await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/${id}`);
   dispatch({
     type: GET_USER,
     payload: res.data,
@@ -164,7 +164,7 @@ export const getUser = (id) => async (dispatch) => {
 
 export const updateUser = (id, updateUser) => async (dispatch) => {
   try {
-    await axios.put(`http://localhost:8000/api/user/${id}`, updateUser);
+    await axios.put(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/${id}`, updateUser);
     dispatch({
       type: GET_ERRORS,
       payload: {},
@@ -180,7 +180,7 @@ export const updateUser = (id, updateUser) => async (dispatch) => {
 export const resetPwEmail = (EmailRequest) => async (dispatch) => {
   try {
     const res = await axios.post(
-      "http://localhost:8000/api/forgotPasswordEmail",
+      "http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/forgotPasswordEmail",
       EmailRequest
     );
     dispatch({
@@ -198,7 +198,7 @@ export const resetPwEmail = (EmailRequest) => async (dispatch) => {
 export const resetPw = (PasswordRequest) => async (dispatch) => {
   try {
     const res = await axios.post(
-      "http://localhost:8000/api/changePassword",
+      "http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/changePassword",
       PasswordRequest
     );
     dispatch({
@@ -216,7 +216,7 @@ export const resetPw = (PasswordRequest) => async (dispatch) => {
 export const verifyEmail = (VerifyToken) => async (dispatch) => {
   try {
     const res = await axios.post(
-      "http://localhost:8000/api/verifyEmail",
+      "http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/verifyEmail",
       VerifyToken
     );
     dispatch({
@@ -232,7 +232,7 @@ export const verifyEmail = (VerifyToken) => async (dispatch) => {
 };
 
 /* export const getNotifications = () => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/notification/showAll`);
+  const res = await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`);
   dispatch({
     type: GET_NOTIFICATIONS,
     payload: res.data,

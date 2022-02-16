@@ -24,7 +24,7 @@ function EditHighights(props) {
     setLoad(true);
 
     await axios
-      .put(`http://localhost:8000/api/investment/${props.id}`, userForm)
+      .put(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/investment/${props.id}`, userForm)
       .then((response) => {
         console.log(response);
         setLoad(false);

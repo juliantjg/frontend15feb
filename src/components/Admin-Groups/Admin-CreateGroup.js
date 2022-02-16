@@ -41,7 +41,7 @@ function MyVerticallyCenteredModal(props) {
 
     setLoad(true);
     await axios
-      .post(`http://localhost:8000/api/groups/create`, userForm)
+      .post(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/groups/create`, userForm)
       .then(() => {
         setLoad(false);
         window.location.reload();

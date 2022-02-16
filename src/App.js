@@ -44,14 +44,14 @@ import AdminGroupOverview from "./components/Admin-Groups/Admin-GroupOverview";
 const token = localStorage.getItem("token");
 
 const MultipleSignIn = async () => {
-  await axios.post("http://localhost:8000/api/checkToken").catch((error) => {
+  await axios.post("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/checkToken").catch((error) => {
     localStorage.clear();
     window.location.reload();
   });
 };
 
 const AdminVerified = async () => {
-  const res = await axios.get("http://localhost:8000/api/getLogoutStatus");
+  const res = await axios.get("http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/getLogoutStatus");
 
   store.dispatch({
     type: GET_LOGOUT_STATUS,
@@ -74,7 +74,7 @@ if (token) {
   AdminVerified().then((result) => {
     console.log(result);
     if (result !== "") {
-      axios.get('http://localhost:8000/api/logout')
+      axios.get('http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/logout')
       .then (()=>{
         localStorage.clear();
         alert(result);

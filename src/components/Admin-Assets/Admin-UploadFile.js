@@ -33,7 +33,7 @@ const UploadFile = (props) => {
 
     setLoad(true);
     await axios
-      .post(`http://localhost:8000/api/assetFile`, userForm)
+      .post(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/assetFile`, userForm)
       .then(() => {
         uploadFile(file, config);
         setTimeout(() => {

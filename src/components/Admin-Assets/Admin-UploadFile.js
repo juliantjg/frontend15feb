@@ -7,8 +7,8 @@ import axios from "axios";
 const config = {
   bucketName: "silc-file-storage",
   region: "ap-southeast-2",
-  accessKeyId: "AKIATDANFPL5EDCTEIKS",
-  secretAccessKey: "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",
+  accessKeyId: "AKIATDANFPL5OQXHMZJP",
+  secretAccessKey: "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",
 };
 
 const UploadFile = (props) => {

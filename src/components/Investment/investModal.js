@@ -18,7 +18,7 @@ function MyVerticallyCenteredModal(props) {
 
   useEffect(async () => {
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${props.id}`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${props.id}`)
       .then((response) => {
         setAssetId(response.data.data.id);
         setReInvData(response.data.data.investorsData);
@@ -28,7 +28,7 @@ function MyVerticallyCenteredModal(props) {
 
   useEffect(async () => {
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/${localStorage.getItem("id")}`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/user/${localStorage.getItem("id")}`)
       .then((response) => {
         // setInvTypes(response.data.data.investorTypes);
         setInvTypes(response.data.data.groupName);
@@ -50,7 +50,7 @@ function MyVerticallyCenteredModal(props) {
     setLoad(true);
 
     await axios
-      .post(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/investment`, userForm)
+      .post(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/investment`, userForm)
       .then((response) => {
         setSuccessId("authSuccess");
         // setErrorMsg(response.data.message);
@@ -262,7 +262,7 @@ function ApplyInvestModal(props) {
 
   useEffect(async () => {
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${props.id}`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${props.id}`)
       .then((response) => {
         setReInvData(response.data.data.investorsData);
         setUserId(response.data.data.user_id);

@@ -28,7 +28,7 @@ class AssetDetails extends Component {
   async bookmark() {
     let id = this.state.asset.id;
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${id}`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${id}`)
       .then((response) => {
         this.setState({ asset: response.data.data });
       });

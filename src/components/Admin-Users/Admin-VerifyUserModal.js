@@ -21,7 +21,7 @@ function MyVerticallyCenteredModal(props) {
 
   useEffect(async () => {
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/${userId}`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/user/${userId}`)
       .then((response) => {
         setAddress(response.data.data.address);
         setContact(response.data.data.contact_no);
@@ -63,7 +63,7 @@ function MyVerticallyCenteredModal(props) {
     setLoad(true);
 
     await axios
-      .put(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/${userId}`, userForm)
+      .put(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/user/${userId}`, userForm)
       .then((response) => {
         console.log(response);
         /* console.log("this is user type: " + investorType); */

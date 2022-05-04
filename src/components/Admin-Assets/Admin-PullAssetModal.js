@@ -15,7 +15,7 @@ function MyVerticallyCenteredModal(props) {
 
     useEffect(async () => {
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/admin/asset/${userId}`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/admin/asset/${userId}`)
       .then((response) => {
         setPullReason(response.data.data.pullReason);
       });
@@ -33,7 +33,7 @@ function MyVerticallyCenteredModal(props) {
     setLoad(true);
 
     await axios
-      .patch(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${userId}`, userForm)
+      .patch(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/asset/${userId}`, userForm)
       .then((response) => {
         console.log(response);
         console.log("this is asset verification: " + userId);

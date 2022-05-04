@@ -131,7 +131,7 @@ class AMdashboard extends Component {
         });
     });
 
-    await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/bookmarks`).then((response) => {
+    await axios.get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/bookmarks`).then((response) => {
       this.setState({ bookmarkData: response.data.data });
     });
 
@@ -157,7 +157,7 @@ class AMdashboard extends Component {
         });
     });
 
-    await axios.get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/bookmarks`).then((response) => {
+    await axios.get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/bookmarks`).then((response) => {
       this.setState({ bookmarkData: response.data.data });
     });
 

@@ -15,7 +15,7 @@ function MyVerticallyCenteredModal(props) {
 
   useEffect(async () => {
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/userEmails/${groupId}`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/userEmails/${groupId}`)
       .then((response) => {
         setEmails(response.data.data);
       });
@@ -31,7 +31,7 @@ function MyVerticallyCenteredModal(props) {
     
     setLoad(true);
     await axios
-      .post(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/groups/addUser` , userForm)
+      .post(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/groups/addUser` , userForm)
       .then((response) => {
         setSuccessId("authSuccess");
         setErrorMsg(response.data.message);

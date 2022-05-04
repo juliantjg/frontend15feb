@@ -14,7 +14,7 @@ function MyVerticallyCenteredModal(props) {
     console.log(props.userId);
 
     await axios
-      .delete(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/${userId}`)
+      .delete(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/user/${userId}`)
       .then((response) => {
         console.log(response);
         setLoad(false);

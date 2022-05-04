@@ -24,7 +24,7 @@ class AdminNavbarHeader extends Component {
 
   async notifApi() {
     await axios
-      .get(`http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
+      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
       .then((res) => {
         this.setState({ notifs: res.data.data });
         console.log(res.data.data);

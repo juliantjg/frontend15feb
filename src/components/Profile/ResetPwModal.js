@@ -44,7 +44,7 @@ function MyVerticallyCenteredModal(props) {
     setLoad(true);
     await axios
       .post(
-        `http://ec2-52-64-193-116.ap-southeast-2.compute.amazonaws.com:8000/api/user/changePasswordAuthenticated`,
+        `http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/user/changePasswordAuthenticated`,
         userForm
       )
       .then((response) => {

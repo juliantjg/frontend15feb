@@ -36,7 +36,7 @@ function AssetBookmark(props) {
 
   // useEffect(async () => {
   //   await axios
-  //     .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/bookmarks`)
+  //     .get(`http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/bookmarks`)
   //     .then((response) => {
   //       setAllData(response.data.data);
   //       console.log(response.data.data);

@@ -22,7 +22,7 @@ function BookmarkButton(props) {
     setLoad(true);
     console.log(userForm);
     await axios
-      .post(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/bookmark`, userForm)
+      .post(`http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/bookmark`, userForm)
       .then((response) => {
         console.log(response);
         setLoad(false);

@@ -7,8 +7,8 @@ import axios from "axios";
 const config = {
   bucketName: "silc-file-storage",
   region: "ap-southeast-2",
-  accessKeyId: "AKIATDANFPL5OQXHMZJP",
-  secretAccessKey: "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",
+  accessKeyId: "",
+  secretAccessKey: "",
 };
 
 const UploadFile = (props) => {
@@ -33,7 +33,7 @@ const UploadFile = (props) => {
 
     setLoad(true);
     await axios
-      .post(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/assetFile`, userForm)
+      .post(`http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/assetFile`, userForm)
       .then(() => {
         uploadFile(file, config);
         setTimeout(() => {

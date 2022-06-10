@@ -9,7 +9,7 @@ function MyVerticallyCenteredModal(props) {
   useEffect(async () => {
     if (props.show) {
       await axios
-        .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showOne/${id}`)
+        .get(`http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showOne/${id}`)
         .then((response) => {
           setNotif(response.data.data);
           // console.log("called")

@@ -2,7 +2,7 @@ import axios from "axios";
 import { GET_INVESTMENTS_ADMIN, GET_INVESTMENTS} from "./types";
 
 export const getInvestmentsAdmin = () => async (dispatch) => {
-  const res = await axios.get("http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/investment");
+  const res = await axios.get("http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/investment");
   dispatch({
     type: GET_INVESTMENTS_ADMIN,
     payload: res.data,
@@ -10,7 +10,7 @@ export const getInvestmentsAdmin = () => async (dispatch) => {
 };
 
 export const getInvestments = () => async (dispatch) => {
-  const res = await axios.get("http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/investor/investment");
+  const res = await axios.get("http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/investor/investment");
   dispatch({
     type: GET_INVESTMENTS,
     payload: res.data,

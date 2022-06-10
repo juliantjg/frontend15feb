@@ -43,7 +43,7 @@ class NavbarHeader extends Component {
 
   async notifApi() {
     await axios
-      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
+      .get(`http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
       .then((res) => {
         this.setState({ notifs: res.data.data });
         this.counter();
@@ -53,7 +53,7 @@ class NavbarHeader extends Component {
   componentDidMount() {
     this.notifApi();
     /*   await axios
-      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
+      .get(`http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
       .then((res) => {
         this.setState({ notifs: res.data.data });
         this.counter();
@@ -63,7 +63,7 @@ class NavbarHeader extends Component {
   handleNotif() {
     this.notifApi();
     /* await axios
-      .get(`http://ec2-3-25-245-63.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
+      .get(`http://ec2-52-64-254-219.ap-southeast-2.compute.amazonaws.com:8000/api/notification/showAll`)
       .then((res) => {
         this.setState({ notifs: res.data.data });
         this.counter();
